@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import loader from "@/assets/loader.gif";
 
-const Loading = () => (
+const LoadingPage = () => (
   <div
     style={{
       display: "flex",
@@ -15,4 +15,4 @@ const Loading = () => (
   </div>
 );
 
-export default Loading;
+export default LoadingPage;

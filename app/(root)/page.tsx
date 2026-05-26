@@ -1,5 +1,13 @@
-export default function Home() {
+import sampleData from '@/db/sample-data';
+import ProductList from '@/components/shared/product/product-list';
+
+const Home = () => {
+  console.log(sampleData);
   return (
-    <div className="flex flex-1 flex-col items-center justify-center bg-zinc-50 font-sans dark:bg-black"></div>
+    <>
+      <ProductList data={sampleData.products} title="Featured Products" limit={4}/>
+    </>
   );
-}
+};
+
+export default Home;

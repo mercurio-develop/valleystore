@@ -1,9 +1,7 @@
-import { ShoppingCart, UserIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import { APP_NAME } from "@/lib/constants";
-import ModeToggle from "@/components/shared/header/mode-toggle";
+import Menu from "@/components/shared/header/menu";
 
 const Header = () => {
   return (
@@ -24,24 +22,7 @@ const Header = () => {
           </Link>
         </div>
         <div className="space-x-2">
-          <ModeToggle />
-          <Button
-            nativeButton={false}
-            variant="ghost"
-            render={
-              <Link href="/cart">
-                <ShoppingCart className="h-4 w-4" /> Cart
-              </Link>
-            }
-          />
-          <Button
-            nativeButton={false}
-            render={
-              <Link href="/cart">
-                <UserIcon className="h-4 w-4" /> Sign In
-              </Link>
-            }
-          />
+          <Menu />
         </div>
       </div>
     </header>
