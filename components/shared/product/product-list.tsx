@@ -1,6 +1,7 @@
 import ProductCard from "@/components/shared/product/product-card";
+import {Product} from "@/types";
 
-const ProductList = ({data, title,limit}: { data: [{ id: string, name: string, slug: string, images: string[] }], title?: string, limit?:number,stock:number,price:number }) => {
+const ProductList = ({data, title, limit}: { data: Product[], title: string, limit: number }) => {
 
   const limitedData = limit ? data.slice(0, limit) : data;
 
@@ -10,9 +11,9 @@ const ProductList = ({data, title,limit}: { data: [{ id: string, name: string, s
     </h2>
     {data.length > 0 ? (
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {limitedData.map((product: { id: string, name: string, slug: string, images: string[] }) => (
-            <ProductCard key={product.slug} product={product} />
-          ))}
+        {limitedData.map((product: Product) => (
+          <ProductCard key={product.slug} product={product}/>
+        ))}
       </div>
     ) : (
       <div><p>No Products found</p></div>
